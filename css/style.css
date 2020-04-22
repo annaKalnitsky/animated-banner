@@ -1,0 +1,142 @@
+
+html {
+box-sizing: border-box;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	padding: 50px 0 0 50px; /*remove this padding no need for production*/
+	
+}
+
+.main{
+	width: 320px;
+    height: 100px;
+	cursor: pointer;
+	box-shadow: 0px 0px 2px 0px rgba(75, 93, 104, 0.25);
+}
+
+.container {
+	width: 320px;
+    height: 100px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.banner__content{
+	display: flex;
+}
+
+.banner__img {
+	background-image: url(../images/main__img.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 160px;
+    height: 100px;
+    animation-name:fadeInRight ;
+	animation-duration: 2.5s;
+	z-index: 5;
+}
+
+.banner__text {
+	overflow: hidden;
+	width: 134px;
+	height: 78px;
+	background-color: #fff;		
+	padding: 10px;
+	align-items: center;
+	display: flex;
+}
+
+.banner__text p {
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 700;
+	color: #343434;
+	animation-name: fadeInRight;
+	animation-duration: 2.5s;		
+}
+
+.banner__btn {
+	z-index: 6;
+	outline: none;
+	border: none;
+	width: 49px;
+	height: 100px;
+	background-color: #F76B00;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 14px;
+	letter-spacing: 0.01em;
+	cursor: pointer;
+	animation-name: flipInY;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;	
+	animation-delay: 2.6s;
+	backface-visibility: visible !important;	
+}
+
+.banner__btn-img {
+	margin-top: 5px;
+}
+
+
+/*-------Animations-----*/
+
+
+/*-------text&image animation-----*/
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/*-------button animation-----*/
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}

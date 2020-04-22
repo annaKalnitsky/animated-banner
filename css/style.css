@@ -5,7 +5,7 @@ box-sizing: border-box;
 
 body{
 	font-family: 'Lato', sans-serif;
-	padding: 50px 0 0 50px; /*remove this padding no need for production*/
+	background-color: #E5E7EA;
 	
 }
 
